@@ -1,121 +1,76 @@
-import { useEffect } from "react";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Emmanuel Anifowose | Mechanical Engineer</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+        background: radial-gradient(circle at 20% 20%, #1a1a1a, #0d0d0d);
+        overflow-x: hidden;
+    }
 
-export default function Portfolio() {
-  useEffect(() => {
-    document.title = "Emmanuel Anifowose | Mechanical Engineer";
-  }, []);
+    /* Mechanical gear background */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Gear_icon.svg/512px-Gear_icon.svg.png');
+        background-repeat: repeat;
+        background-size: 150px;
+        opacity: 0.05;
+        z-index: 0;
+        animation: gearmove 30s linear infinite;
+    }
+    @keyframes gearmove {
+        from { background-position: 0 0; }
+        to { background-position: 300px 300px; }
+    }
 
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-300 text-gray-900 font-sans">
-      {/* Header */}
-      <motion.header
-        className="bg-opacity-90 backdrop-blur-lg py-12 text-center"
-        style={{ backgroundImage: "url('/mechanical-bg.svg')", backgroundSize: "cover" }}
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h1 className="text-4xl font-bold text-white drop-shadow-lg">Emmanuel Anifowose</h1>
-        <p className="mt-2 text-lg text-gray-200">Mechanical Engineer | Product Design | Consumer Electronics</p>
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 inline-block px-6 py-2 bg-yellow-400 text-gray-900 font-semibold rounded-lg shadow hover:bg-yellow-300 transition"
-        >
-          View My Resume
-        </a>
-      </motion.header>
+    header {
+        padding: 2rem;
+        text-align: center;
+        z-index: 1;
+        position: relative;
+    }
 
-      {/* Navigation */}
-      <nav className="bg-gray-800 text-white py-3 sticky top-0 z-50">
-        <ul className="flex justify-center space-x-6 text-sm">
-          {['About', 'Experience', 'Education', 'Skills', 'Contact'].map((item, idx) => (
-            <motion.li whileHover={{ scale: 1.05 }} key={idx}>
-              <a href={`#${item.toLowerCase()}`} className="hover:text-yellow-300">
-                {item}
-              </a>
-            </motion.li>
-          ))}
-        </ul>
-      </nav>
+    header h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        animation: fadeInDown 1s ease-out;
+    }
 
-      {/* Sections */}
-      <section id="about" className="max-w-4xl mx-auto p-6">
-        <motion.h2
-          className="text-xl font-bold border-b border-gray-400 pb-1 mb-3"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-        >
-          About Me
-        </motion.h2>
-        <motion.p
-          className="leading-relaxed text-base"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          I am a Mechanical Engineer with 5 years of experience designing and developing high-reliability hardware for high-volume consumer electronics. My expertise includes mechanical architecture, electromechanical integration, and design for manufacturing (DFM). At Amazon (eero), I led the mechanical design of the eero 7 from concept to launch, working on injection-molded, sheet metal, die-cast parts, and flexible PCB antennas. I hold an M.S. in Mechanical Engineering from Stanford University and a B.S. from Covenant University.
-        </motion.p>
-      </section>
+    header p {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+        color: #ccc;
+        animation: fadeIn 2s ease-out;
+    }
 
-      <section id="experience" className="max-w-4xl mx-auto p-6 bg-white bg-opacity-80 rounded-lg shadow mb-6">
-        <motion.h2 className="text-xl font-bold border-b border-gray-400 pb-1 mb-3">Experience</motion.h2>
-        <div className="space-y-4 text-sm">
-          <div>
-            <h3 className="font-semibold">Amazon (eero) – Mechanical Engineer</h3>
-            <p className="italic text-gray-600">Sunnyvale, CA | 2020 – 2025</p>
-            <ul className="list-disc ml-5 mt-1">
-              <li>Led mechanical design for eero 7 from concept to launch.</li>
-              <li>Designed injection-molded, sheet metal, and die-cast parts.</li>
-              <li>Integrated flexible PCB antennas into compact enclosures.</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold">Graduate Researcher – Stanford University</h3>
-            <p className="italic text-gray-600">Stanford, CA | 2018 – 2020</p>
-            <ul className="list-disc ml-5 mt-1">
-              <li>Developed thermal management solutions for electronics.</li>
-              <li>Designed and prototyped experimental setups.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
 
-      <section id="education" className="max-w-4xl mx-auto p-6">
-        <motion.h2 className="text-xl font-bold border-b border-gray-400 pb-1 mb-3">Education</motion.h2>
-        <ul className="space-y-2 text-sm">
-          <li><strong>Stanford University</strong> – M.S. Mechanical Engineering (2018 – 2020)</li>
-          <li><strong>Covenant University</strong> – B.S. Mechanical Engineering (2012 – 2016)</li>
-        </ul>
-      </section>
+    .section {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 1rem 2rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        z-index: 1;
+        position: relative;
+        animation: fadeIn 1.5s ease-out;
+    }
 
-      <section id="skills" className="max-w-4xl mx-auto p-6 bg-white bg-opacity-80 rounded-lg shadow mb-6">
-        <motion.h2 className="text-xl font-bold border-b border-gray-400 pb-1 mb-3">Skills</motion.h2>
-        <ul className="grid grid-cols-2 gap-1 list-disc ml-5 text-sm">
-          <li>Mechanical Design (2D & 3D CAD)</li>
-          <li>Product Lifecycle Management</li>
-          <li>Design for Manufacturing (DFM)</li>
-          <li>Thermal Design</li>
-          <li>Injection Molding, Sheet Metal, Die Casting</li>
-          <li>Electromechanical Integration</li>
-          <li>Python Scripting</li>
-          <li>Embedded Systems</li>
-        </ul>
-      </section>
-
-      <section id="contact" className="max-w-4xl mx-auto p-6">
-        <motion.h2 className="text-xl font-bold border-b border-gray-400 pb-1 mb-3">Contact</motion.h2>
-        <p className="text-sm">Email: <a href="mailto:anifowosee@gmail.com" className="text-blue-700 hover:underline">anifowosee@gmail.com</a></p>
-        <p className="text-sm">Phone: <a href="tel:+14704614651" className="text-blue-700 hover:underline">(470) 461-4651</a></p>
-        <p className="text-sm">LinkedIn: <a href="https://www.linkedin.com/in/emmanuel-anifowose" target="_blank" className="text-blue-700 hover:underline">linkedin.com/in/emmanuel-anifowose</a></p>
-      </section>
-
-      <footer className="bg-gray-800 text-white py-3 text-center text-xs">
-        &copy; 2025 Emmanuel Anifowose. All rights reserved.
-      </footer>
-    </div>
-  );
-}
+    h
