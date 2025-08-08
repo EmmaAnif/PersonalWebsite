@@ -2,75 +2,185 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emmanuel Anifowose | Mechanical Engineer</title>
 <style>
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: white;
-        background: radial-gradient(circle at 20% 20%, #1a1a1a, #0d0d0d);
-        overflow-x: hidden;
-    }
+  /* Reset & base */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    background: radial-gradient(circle at 20% 20%, #1a1a1a, #0d0d0d);
+    overflow-x: hidden;
+  }
 
-    /* Mechanical gear background */
-    body::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Gear_icon.svg/512px-Gear_icon.svg.png');
-        background-repeat: repeat;
-        background-size: 150px;
-        opacity: 0.05;
-        z-index: 0;
-        animation: gearmove 30s linear infinite;
-    }
-    @keyframes gearmove {
-        from { background-position: 0 0; }
-        to { background-position: 300px 300px; }
-    }
+  /* Mechanical gear background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Gear_icon.svg/512px-Gear_icon.svg.png');
+    background-repeat: repeat;
+    background-size: 150px;
+    opacity: 0.05;
+    z-index: 0;
+    animation: gearmove 30s linear infinite;
+  }
+  @keyframes gearmove {
+    from { background-position: 0 0; }
+    to { background-position: 300px 300px; }
+  }
 
-    header {
-        padding: 2rem;
-        text-align: center;
-        z-index: 1;
-        position: relative;
-    }
+  /* Header */
+  header {
+    padding: 3rem 1rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
 
+  header h1 {
+    font-size: 3rem;
+    margin: 0;
+    animation: fadeInDown 1s ease-out forwards;
+  }
+
+  header p {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    color: #ccc;
+    animation: fadeIn 2s ease-out forwards;
+  }
+
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Section styling */
+  .section {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem 2.5rem;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+
+  h2 {
+    color: #eee;
+    border-bottom: 2px solid #555;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  p, li {
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+
+  ul {
+    padding-left: 1.3rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Resume button */
+  .resume-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.8rem;
+    background: #ff9800;
+    color: black;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(255, 152, 0, 0.5);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .resume-btn:hover {
+    background: #ffb347;
+    transform: scale(1.05);
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
     header h1 {
-        font-size: 2.5rem;
-        margin: 0;
-        animation: fadeInDown 1s ease-out;
+      font-size: 2rem;
     }
-
     header p {
-        font-size: 1.2rem;
-        margin-top: 0.5rem;
-        color: #ccc;
-        animation: fadeIn 2s ease-out;
+      font-size: 1rem;
     }
-
-    @keyframes fadeInDown {
-        from { opacity: 0; transform: translateY(-20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
     .section {
-        max-width: 900px;
-        margin: 2rem auto;
-        padding: 1rem 2rem;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 10px;
-        z-index: 1;
-        position: relative;
-        animation: fadeIn 1.5s ease-out;
+      padding: 1.5rem 1.5rem;
     }
+  }
+</style>
+</head>
+<body>
 
-    h
+<header>
+  <h1>Emmanuel Anifowose</h1>
+  <p>Mechanical Engineer | Consumer Electronics | Product Design</p>
+  <a href="Emmanuel_Anifowose_Resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-btn">📄 View My Resume</a>
+</header>
+
+<section class="section" id="about">
+  <h2>About Me</h2>
+  <p>
+    I am a Mechanical Engineer with 5 years of experience developing high-reliability hardware for high-volume consumer electronics. I specialize in mechanical architecture, electromechanical integration, and design for manufacturing (DFM) across the product lifecycle.
+  </p>
+</section>
+
+<section class="section" id="experience">
+  <h2>Experience</h2>
+  <ul>
+    <li><strong>Amazon (eero)</strong> – Led mechanical design for eero 7 from concept to launch, designing injection-molded, sheet metal, die-cast parts, and flexible PCB antennas.</li>
+    <li><strong>Stanford University</strong> – Graduate Researcher, thermal management and experimental prototyping.</li>
+  </ul>
+</section>
+
+<section class="section" id="education">
+  <h2>Education</h2>
+  <ul>
+    <li><strong>Stanford University</strong> – M.S. Mechanical Engineering (2018 – 2020)</li>
+    <li><strong>Covenant University</strong> – B.S. Mechanical Engineering (2012 – 2016)</li>
+  </ul>
+</section>
+
+<section class="section" id="skills">
+  <h2>Skills</h2>
+  <ul>
+    <li>Mechanical Design (2D & 3D CAD)</li>
+    <li>Product Lifecycle Management</li>
+    <li>Design for Manufacturing (DFM)</li>
+    <li>Thermal Design</li>
+    <li>Injection Molding, Sheet Metal, Die Casting</li>
+    <li>Electromechanical Integration</li>
+    <li>Python Scripting</li>
+    <li>Embedded Systems</li>
+  </ul>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:anifowosee@gmail.com" style="color:#ffb347;">anifowosee@gmail.com</a></p>
+  <p>Phone: <a href="tel:+14704614651" style="color:#ffb347;">(470) 461-4651</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/emmanuel-anifowose" target="_blank" style="color:#ffb347;">linkedin.com/in/emmanuel-anifowose</a></p>
+</section>
+
+</body>
+</html>
