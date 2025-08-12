@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Confirm Shipment - Baru</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f5f8fa; color: #004d40; margin: 0; }
+  .container { max-width: 600px; margin: 3rem auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  h2 { text-align: center; margin-bottom: 1rem; }
+  p { font-size: 1.1rem; margin-bottom: 1rem; }
+  ul { margin: 1rem 0 2rem 1.5rem; }
+  button {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 1rem 2rem;
+    background-color: #a5d6a7;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #004d40;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  button:hover {
+    background-color: #81c784;
+  }
+  .back-link {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    color: #004d40;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Review and Confirm Your Shipment</h2>
+    <p><strong>Description of Goods:</strong> Clothing and food supplies from Lagos, Enugu, Aba</p>
+    <p><strong>Approximate Weight:</strong> 500 kg</p>
+    <p><strong>Shipment Frequency:</strong> Monthly</p>
+    <p><strong>Delivery Window:</strong> Between 1st and 5th of each month</p>
+    <p><strong>Estimated Shipping Cost:</strong> $1,200 (Consolidated Shipment Savings Applied)</p>
+    <ul>
+      <li>Pickup and consolidation managed by Baru</li>
+      <li>Customs clearance handled</li>
+      <li>Real-time tracking and delivery notifications</li>
+    </ul>
+    <button id="confirmBtn">Confirm and Pay</button>
+    <a href="shipment-request.html" class="back-link">Back to Shipment Request</a>
+  </div>
+  <script>
+    document.getElementById('confirmBtn').addEventListener('click', function() {
+      alert('Payment processing not implemented in this demo.');
+      window.location.href = 'tracking.html';
+    });
+  </script>
+</body>
+</html>
