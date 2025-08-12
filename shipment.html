@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Shipment - Baru</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Baru</h1>
+  </header>
+  <main>
+    <h2>Request a Shipment</h2>
+    <form action="review.html">
+      <p>How should we handle supplier details?</p>
+      <label>
+        <input type="radio" name="supplier" checked>
+        Contact supplier on my behalf to get all details
+      </label>
+      <label>
+        <input type="radio" name="supplier">
+        I will provide shipment details
+      </label>
+
+      <p>Choose Delivery Option:</p>
+      <label>
+        <input type="radio" name="delivery" checked>
+        Standard (10–14 days) – $250
+      </label>
+      <label>
+        <input type="radio" name="delivery">
+        Express (5–7 days) – $400
+      </label>
+      <label>
+        <input type="radio" name="delivery">
+        Economy (21 days) – $180
+      </label>
+
+      <button type="submit" class="btn primary">Next</button>
+    </form>
+  </main>
+</body>
+</html>
