@@ -1,22 +1,32 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baru - Ship From Africa to the World</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Baru - Sign Up</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Baru</h1>
-    <nav>
-      <a href="signup.html" class="btn">Get Started</a>
-    </nav>
-  </header>
-  <section class="hero">
-    <h2>Effortless Trade Consolidation from Africa to Your Doorstep</h2>
-    <p>Baru makes shipping from Africa simple — you choose, we handle the rest.</p>
-    <a href="signup.html" class="btn primary">Start Shipping</a>
-  </section>
+<header>Baru Shipping</header>
+<div class="container">
+    <h2>Create Your Account</h2>
+    <form action="shipment.html">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required>
+
+        <label for="type">Delivery Type</label>
+        <select id="type">
+            <option value="personal">Personal</option>
+            <option value="business">Business</option>
+        </select>
+
+        <label for="address">Delivery Address</label>
+        <input type="text" id="address" placeholder="Enter delivery address" required>
+
+        <label for="contact">Phone/Email</label>
+        <input type="text" id="contact" required>
+
+        <button type="submit">Continue</button>
+    </form>
+</div>
 </body>
 </html>
