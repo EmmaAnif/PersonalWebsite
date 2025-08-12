@@ -1,44 +1,55 @@
+<!-- shipment.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Request Shipment - Baru</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Baru - Shipment Request</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleDetails() {
+            let choice = document.getElementById("details-choice").value;
+            document.getElementById("self-details").classList.toggle("hidden", choice !== "self");
+            document.getElementById("supplier-details").classList.toggle("hidden", choice !== "supplier");
+        }
+    </script>
 </head>
 <body>
-  <header>
-    <h1>Baru</h1>
-  </header>
-  <main>
-    <h2>Request a Shipment</h2>
-    <form action="review.html">
-      <p>How should we handle supplier details?</p>
-      <label>
-        <input type="radio" name="supplier" checked>
-        Contact supplier on my behalf to get all details
-      </label>
-      <label>
-        <input type="radio" name="supplier">
-        I will provide shipment details
-      </label>
+<header>Baru Shipping</header>
+<div class="container">
+    <h2>Request Your Shipment</h2>
+    <form action="tracking.html">
+        <label for="details-choice">How should we get shipment details?</label>
+        <select id="details-choice" onchange="toggleDetails()">
+            <option value="supplier">Contact my supplier for me</option>
+            <option value="self">I’ll enter the details myself</option>
+        </select>
 
-      <p>Choose Delivery Option:</p>
-      <label>
-        <input type="radio" name="delivery" checked>
-        Standard (10–14 days) – $250
-      </label>
-      <label>
-        <input type="radio" name="delivery">
-        Express (5–7 days) – $400
-      </label>
-      <label>
-        <input type="radio" name="delivery">
-        Economy (21 days) – $180
-      </label>
+        <div id="supplier-details">
+            <label for="supplier-name">Supplier Name</label>
+            <input type="text" id="supplier-name">
 
-      <button type="submit" class="btn primary">Next</button>
+            <label for="supplier-contact">Supplier Contact</label>
+            <input type="text" id="supplier-contact">
+
+            <p style="font-size:0.85em;color:#666;">We will contact your supplier and confirm shipment details with you.</p>
+        </div>
+
+        <div id="self-details" class="hidden">
+            <label for="goods">What are you shipping?</label>
+            <textarea id="goods" placeholder="List items here"></textarea>
+
+            <label for="weight">Approx. weight (kg)</label>
+            <input type="number" id="weight">
+        </div>
+
+        <label for="delivery-option">Delivery Speed & Cost</label>
+        <select id="delivery-option">
+            <option value="standard">Standard (3-4 weeks) - $200</option>
+            <option value="express">Express (7-10 days) - $500</option>
+            <option value="priority">Priority (3-5 days) - $900</option>
+        </select>
+
+        <button type="submit">Confirm & Pay</button>
     </form>
-  </main>
+</div>
 </body>
 </html>
