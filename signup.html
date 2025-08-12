@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sign Up - Baru</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f5f8fa; color: #004d40; margin: 0; }
+  .container { max-width: 400px; margin: 3rem auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  h2 { text-align: center; margin-bottom: 1.5rem; }
+  label { display: block; margin-top: 1rem; font-weight: bold; }
+  input {
+    width: 100%; padding: 0.5rem; margin-top: 0.3rem; border: 1px solid #ccc; border-radius: 4px;
+  }
+  button {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #a5d6a7;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #004d40;
+    cursor: pointer;
+    font-size: 1.1rem;
+  }
+  button:hover {
+    background-color: #81c784;
+  }
+  .back-link {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    color: #004d40;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Create Your Baru Account</h2>
+    <form id="signupForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required />
+      <label for="business">Business Name</label>
+      <input type="text" id="business" required />
+      <label for="email">Email Address</label>
+      <input type="email" id="email" required />
+      <label for="address">Delivery Address (San Jose, CA)</label>
+      <input type="text" id="address" required value="San Jose, CA" />
+      <button type="submit">Sign Up</button>
+    </form>
+    <a href="index.html" class="back-link">Back to Home</a>
+  </div>
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // For demo, no backend: redirect to shipment request page
+      window.location.href = 'shipment-request.html';
+    });
+  </script>
+</body>
+</html>
