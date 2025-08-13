@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shipment Confirmed - Baru</title>
+    <title>Baru - Confirmation</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1><a href="index.html" style="color: #4DB6AC; text-decoration: none;">Baru</a></h1>
-  </header>
+<header>
+    <h1 onclick="location.href='index.html'">Baru</h1>
+    <div class="cart-indicator" id="cart-count">0</div>
+</header>
 <main>
-    <h2>Shipment Request Received</h2>
-    <p>Thank you for using Baru. Your shipment request has been submitted.</p>
-    <p>We’ll contact you shortly with confirmation and tracking details.</p>
-    <button onclick="window.location.href='index.html'">Back to Home</button>
+    <h2>Order Received!</h2>
+    <p>Your final cost will be provided after pickup based on actual weight.</p>
+    <div id="login-reminder"></div>
 </main>
-<footer>
-    &copy; 2025 Baru. All rights reserved.
-</footer>
+<script>
+    let user = getUser();
+    if (!user) {
+        document.getElementById("login-reminder").innerHTML = `
+            <p>Please <a href='login.html'>log in</a> to save your details for next time.</p>
+        `;
+    }
+    localStorage.removeItem("cart");
+    updateCartCount();
+</script>
 </body>
 </html>
