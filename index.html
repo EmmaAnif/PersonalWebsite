@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baru - Africa to the World</title>
+    <title>Baru - Home</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 <header>
-    <h1>Baru</h1>
-    <p>Effortless Shipping from Africa to the World</p>
+    <h1 onclick="location.href='index.html'">Baru</h1>
+    <div class="cart-indicator" id="cart-count">0</div>
 </header>
 <main>
-    <h2>Ship Smarter, Pay Less</h2>
-    <p>Baru consolidates shipments from African suppliers to save you money, reduce hassle, and ensure smooth delivery anywhere in the world.</p>
-    <p>Whether you’re a business or sending personal goods, we handle the logistics — you just tell us what and where.</p>
-    <button onclick="window.location.href='request.html'">Start a Shipment</button>
+    <h2 id="greeting">Welcome to Baru</h2>
+    <p>Your one-stop solution for consolidated African exports.</p>
+    <button onclick="location.href='login.html'">Log In / Sign Up</button>
+    <button onclick="location.href='shipments.html'">Start Shipping</button>
 </main>
-<footer>
-    &copy; 2025 Baru. All rights reserved.
-</footer>
+<script>
+    greetUser();
+</script>
 </body>
 </html>
