@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Baru - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<header>
+    <h1 onclick="location.href='index.html'">Baru</h1>
+    <div class="cart-indicator" id="cart-count">0</div>
+</header>
+<main>
+    <h2>Log In / Sign Up</h2>
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="text" id="address" placeholder="Delivery Address">
+    <button onclick="saveUser()">Save</button>
+</main>
+<script>
+    function saveUser() {
+        let name = document.getElementById("name").value;
+        let address = document.getElementById("address").value;
+        if (!name || !address) {
+            alert("Please enter all details.");
+            return;
+        }
+        localStorage.setItem("user", JSON.stringify({ name, address }));
+        alert("Details saved! Redirecting...");
+        location.href = "index.html";
+    }
+</script>
+</body>
+</html>
