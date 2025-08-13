@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Baru - Shipments</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<header>
+    <h1 onclick="location.href='index.html'">Baru</h1>
+    <div class="cart-indicator" id="cart-count">0</div>
+</header>
+<main>
+    <h2>Add Shipment</h2>
+    <div id="user-fields"></div>
+    <input type="text" id="supplierPhone" placeholder="Supplier Phone Number">
+    <input type="text" id="supplierIG" placeholder="Supplier Instagram Handle">
+    <input type="number" id="weight" placeholder="Estimated Weight (kg)">
+    <button onclick="addShipment()">Add to Cart</button>
+</main>
+<script>
+    let user = getUser();
+    let fields = document.getElementById("user-fields");
+    if (!user) {
+        fields.innerHTML = `
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="text" id="address" placeholder="Delivery Address">
+        `;
+    }
+
+    function addShipment() {
+        let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        let shipment = {
+            supplierPhone: document.getElementById("supplierPhone").value,
+            supplierIG: document.getElementById("supplierIG").value,
+            weight: parseFloat(document.getElementById("weight").value) || 0
+        };
+        if (!user) {
+            shipment.name = document.getElementById("name").value;
+            shipment.address = document.getElementById("address").value;
+        }
+        cart.push(shipment);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+        alert("Shipment added!");
+    }
+</script>
+</body>
+</html>
